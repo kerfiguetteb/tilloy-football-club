@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Convocation{% endblock %}
+
+{% block body %}
+    <h1>Convocation</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ convocation.id }}</td>
+            </tr>
+            <tr>
+                <th>Disponibiliter</th>
+                <td>{{ convocation.disponibiliter ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('entraineur_app_convocation_index') }}">back to list</a>
+
+    <a href="{{ path('entraineur_app_convocation_edit', {'id': convocation.id}) }}">edit</a>
+
+    {{ include('entraineur/convocation/_delete_form.html.twig') }}
+{% endblock %}

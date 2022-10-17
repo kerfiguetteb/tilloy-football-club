@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Game{% endblock %}
+
+{% block body %}
+    <h1>Game</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ game.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ game.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ game.description }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ game.domicile.equipe.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table">
+        <tbody>
+        {% for convocation in convocations %}
+            
+            <tr>
+                <th>Id</th>
+                <td>{{ convocation.joueur.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ convocation.joueur.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ convocation.disponibiliter}}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ convocation.disponibiliter}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('entraineur_app_game_index') }}">back to list</a>
+
+    <a href="{{ path('entraineur_app_game_edit', {'id': game.id}) }}">edit</a>
+
+    {{ include('entraineur/game/_delete_form.html.twig') }}
+{% endblock %}

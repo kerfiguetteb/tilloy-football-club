@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Joueur index{% endblock %}
+
+{% block body %}
+<div = "container mt-4">
+    <h1>{{entraineur.nom}} {{entraineur.prenom}}</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">nom</th>
+      <th scope="col">prenom</th>
+      <th scope="col">age</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+        {% for joueur in joueurs %}
+
+    <tr>
+      <th scope="row">{{joueur.id}}</th>
+      <td>{{ joueur.nom }}</td>
+      <td>{{ joueur.prenom }}</td>
+      <td>{{ joueur.age }}</td>
+      <td>
+        <a href="{{ path('entraineur_app_joueur_show', {'id': joueur.id}) }}" class="btn btn-primary">Voir Profil</a>
+        <a href="{{ path('entraineur_app_joueur_edit', {'id': joueur.id}) }}" class="btn btn-secondary">Modifier</a>
+      </td>
+    </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+
+  </tbody>
+</table>
+    <a href="{{ path('entraineur_app_joueur_new') }}">Create new</a>
+</div>   
+{% endblock %}

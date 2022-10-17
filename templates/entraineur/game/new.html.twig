@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Game{% endblock %}
+
+{% block body %}
+    <h1>Création d'un match</h1>
+
+    {{ include('entraineur/game/_form.html.twig') }}
+    
+    <div style='text-align:center'>
+    <a href="{{ path('entraineur_app_game_index') }}" class = "btn btn-secondary">&#60&#60 Revenir liste des matchs</a>
+    </div>
+{% endblock %}

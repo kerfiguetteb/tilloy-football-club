@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Convocation{% endblock %}
+
+{% block body %}
+    <h1>Create new Convocation</h1>
+
+    {{ include('convocation/_form.html.twig') }}
+
+    <a href="{{ path('app_convocation_index') }}">back to list</a>
+{% endblock %}

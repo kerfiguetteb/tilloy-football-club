@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Game index{% endblock %}
+
+{% block body %}
+
+<div = "container" style ="margin:30px">
+    <h1>Entraineur index</h1>
+    <a href="{{ path('entraineur_app_game_new') }}" class="btn btn-secondary" style="margin:15px"> + Ajouter un match</a>
+    <div class="row flex justify-content-center flex-wrap">
+
+            {% for game in games %}
+        <div class="card-deck col-md-4">
+            <div class="card mb-4">
+                <div class="card-body" style="text-align:center">
+                <h5 class="card-title"> {{ game.nom }}</h5>
+                <p class="card-text"><small class="text-muted">{{ game.description}}</small></p>
+                <a href="{{ path('entraineur_app_game_show', {'id': game.id}) }}" class="btn btn-primary">Voir</a>
+                <a href="{{ path('entraineur_app_game_edit', {'id': game.id}) }}" class="btn btn-secondary">Modifier</a>
+                </div>
+            </div>
+        </div>
+
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+    </div>
+
+</div>   
+
+{% endblock %}

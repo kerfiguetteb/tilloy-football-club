@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Convocation{% endblock %}
+
+{% block body %}
+    <h1>Edit Convocation</h1>
+
+    {{ include('entraineur/convocation/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('entraineur_app_convocation_index') }}">back to list</a>
+
+    {{ include('entraineur/convocation/_delete_form.html.twig') }}
+{% endblock %}
