@@ -1,7 +1,2 @@
 # tilloy-football-club
-# tilloy-football-club
-# tilloy-football-club
-# tilloy-football-club
-# tilloy-football-club
-# tilloy-football-club
-# tilloy-football-club
+apllication web d'un club de foot
